@@ -18,5 +18,8 @@ namespace QLNH.Entity
         public string ten { get; set; }
         public string trangthai { get; set; }
         public int songuoi { get; set; }
+        public static int width = 90;
+        public static int height = 90;
+        public virtual BanSuDung BanSuDung { get; set; }
     }
 }

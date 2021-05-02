@@ -14,6 +14,13 @@ namespace QLNH.Entity
     
     public partial class HoaDon
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HoaDon()
+        {
+            this.BanSuDungs = new HashSet<BanSuDung>();
+            this.HoaDonchitiets = new HashSet<HoaDonchitiet>();
+        }
+    
         public int idhoadon { get; set; }
         public System.DateTime ngaycheckin { get; set; }
         public Nullable<System.DateTime> ngaycheckout { get; set; }
@@ -22,6 +29,10 @@ namespace QLNH.Entity
         public Nullable<int> Tongtien { get; set; }
         public Nullable<int> idnv { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BanSuDung> BanSuDungs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDonchitiet> HoaDonchitiets { get; set; }
         public virtual NhanVien NhanVien { get; set; }
     }
 }

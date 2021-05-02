@@ -56,40 +56,46 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\BanAn.cs">
-      <DependentUpon>QLNH.tt</DependentUpon>
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\BanSuDung.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Ca.cs">
-      <DependentUpon>QLNH.tt</DependentUpon>
+      <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Danhmucthucan.cs">
-      <DependentUpon>QLNH.tt</DependentUpon>
+      <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\HoaDon.cs">
-      <DependentUpon>QLNH.tt</DependentUpon>
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\HoaDonchitiet.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\NhanVien.cs">
-      <DependentUpon>QLNH.tt</DependentUpon>
+      <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\QLNH.Context.cs">
+    <Compile Include="Entity\QLNHang.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLNH.Context.tt</DependentUpon>
+      <DependentUpon>QLNHang.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\QLNH.cs">
+    <Compile Include="Entity\QLNHang.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLNH.tt</DependentUpon>
+      <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\QLNH.Designer.cs">
+    <Compile Include="Entity\QLNHang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLNH.edmx</DependentUpon>
+      <DependentUpon>QLNHang.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entity\TaiKhoan.cs">
-      <DependentUpon>QLNH.tt</DependentUpon>
+      <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Thucan.cs">
-      <DependentUpon>QLNH.tt</DependentUpon>
+      <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
     <Compile Include="View\fAccountProfile.cs">
       <SubType>Form</SubType>
@@ -147,12 +153,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Entity\QLNH.edmx">
+    <EntityDeploy Include="Entity\QLNHang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLNH.Designer.cs</LastGenOutput>
+      <LastGenOutput>QLNHang.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Entity\QLNH.edmx.diagram">
-      <DependentUpon>QLNH.edmx</DependentUpon>
+    <None Include="Entity\QLNHang.edmx.diagram">
+      <DependentUpon>QLNHang.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -172,19 +178,19 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entity\QLNH.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLNH.edmx</DependentUpon>
-      <LastGenOutput>QLNH.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Entity\QLNH.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLNH.edmx</DependentUpon>
-      <LastGenOutput>QLNH.cs</LastGenOutput>
-    </Content>
+    <Folder Include="BLL\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
+    <Content Include="Entity\QLNHang.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNHang.edmx</DependentUpon>
+      <LastGenOutput>QLNHang.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\QLNHang.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNHang.edmx</DependentUpon>
+      <LastGenOutput>QLNHang.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

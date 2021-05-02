@@ -14,11 +14,19 @@ namespace QLNH.Entity
     
     public partial class Thucan
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Thucan()
+        {
+            this.HoaDonchitiets = new HashSet<HoaDonchitiet>();
+        }
+    
         public int id { get; set; }
         public int iddanhmuc { get; set; }
         public string ten { get; set; }
         public int gia { get; set; }
     
         public virtual Danhmucthucan Danhmucthucan { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDonchitiet> HoaDonchitiets { get; set; }
     }
 }
