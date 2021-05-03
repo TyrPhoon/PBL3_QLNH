@@ -43,6 +43,11 @@ namespace QLNH
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.flpanelTable = new System.Windows.Forms.FlowLayoutPanel();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.tbtotal = new System.Windows.Forms.TextBox();
 			this.panel2.SuspendLayout();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -53,33 +58,40 @@ namespace QLNH
 			// panel2
 			// 
 			this.panel2.Controls.Add(this.listView1);
-			this.panel2.Location = new System.Drawing.Point(468, 86);
+			this.panel2.Location = new System.Drawing.Point(481, 90);
 			this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(318, 294);
+			this.panel2.Size = new System.Drawing.Size(431, 294);
 			this.panel2.TabIndex = 3;
 			// 
 			// listView1
 			// 
-			this.listView1.HideSelection = false;
-			this.listView1.Location = new System.Drawing.Point(0, 2);
+			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+			this.listView1.GridLines = true;
+			this.listView1.Location = new System.Drawing.Point(2, 2);
 			this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(316, 288);
+			this.listView1.Size = new System.Drawing.Size(426, 290);
 			this.listView1.TabIndex = 0;
 			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.listView1.View = System.Windows.Forms.View.Details;
 			// 
 			// panel3
 			// 
+			this.panel3.Controls.Add(this.tbtotal);
 			this.panel3.Controls.Add(this.comboBox3);
 			this.panel3.Controls.Add(this.button4);
 			this.panel3.Controls.Add(this.numericUpDown2);
 			this.panel3.Controls.Add(this.button3);
 			this.panel3.Controls.Add(this.button2);
-			this.panel3.Location = new System.Drawing.Point(468, 384);
+			this.panel3.Location = new System.Drawing.Point(483, 388);
 			this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(318, 70);
+			this.panel3.Size = new System.Drawing.Size(429, 66);
 			this.panel3.TabIndex = 4;
 			// 
 			// comboBox3
@@ -103,7 +115,7 @@ namespace QLNH
 			// 
 			// numericUpDown2
 			// 
-			this.numericUpDown2.Location = new System.Drawing.Point(126, 38);
+			this.numericUpDown2.Location = new System.Drawing.Point(112, 38);
 			this.numericUpDown2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.numericUpDown2.Name = "numericUpDown2";
 			this.numericUpDown2.Size = new System.Drawing.Size(94, 22);
@@ -112,7 +124,7 @@ namespace QLNH
 			// 
 			// button3
 			// 
-			this.button3.Location = new System.Drawing.Point(126, 4);
+			this.button3.Location = new System.Drawing.Point(112, 4);
 			this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(94, 31);
@@ -122,10 +134,10 @@ namespace QLNH
 			// 
 			// button2
 			// 
-			this.button2.Location = new System.Drawing.Point(243, 4);
+			this.button2.Location = new System.Drawing.Point(348, 6);
 			this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(76, 55);
+			this.button2.Size = new System.Drawing.Size(78, 58);
 			this.button2.TabIndex = 4;
 			this.button2.Text = "Thanh toán";
 			this.button2.UseVisualStyleBackColor = true;
@@ -136,15 +148,15 @@ namespace QLNH
 			this.panel4.Controls.Add(this.button1);
 			this.panel4.Controls.Add(this.comboBox2);
 			this.panel4.Controls.Add(this.comboBox1);
-			this.panel4.Location = new System.Drawing.Point(465, 26);
+			this.panel4.Location = new System.Drawing.Point(481, 26);
 			this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(315, 56);
+			this.panel4.Size = new System.Drawing.Size(431, 58);
 			this.panel4.TabIndex = 5;
 			// 
 			// numericUpDown1
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(259, 18);
+			this.numericUpDown1.Location = new System.Drawing.Point(350, 18);
 			this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.numericUpDown1.Minimum = new decimal(new int[] {
             100,
@@ -152,7 +164,7 @@ namespace QLNH
             0,
             -2147483648});
 			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(53, 22);
+			this.numericUpDown1.Size = new System.Drawing.Size(62, 22);
 			this.numericUpDown1.TabIndex = 3;
 			this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -162,10 +174,10 @@ namespace QLNH
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(180, 2);
+			this.button1.Location = new System.Drawing.Point(226, 2);
 			this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(76, 50);
+			this.button1.Size = new System.Drawing.Size(105, 52);
 			this.button1.TabIndex = 2;
 			this.button1.Text = "Thêm món";
 			this.button1.UseVisualStyleBackColor = true;
@@ -176,7 +188,7 @@ namespace QLNH
 			this.comboBox2.Location = new System.Drawing.Point(2, 30);
 			this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(174, 24);
+			this.comboBox2.Size = new System.Drawing.Size(199, 24);
 			this.comboBox2.TabIndex = 1;
 			// 
 			// comboBox1
@@ -185,7 +197,7 @@ namespace QLNH
 			this.comboBox1.Location = new System.Drawing.Point(3, 2);
 			this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(174, 24);
+			this.comboBox1.Size = new System.Drawing.Size(198, 24);
 			this.comboBox1.TabIndex = 0;
 			// 
 			// flpanelTable
@@ -194,14 +206,50 @@ namespace QLNH
 			this.flpanelTable.Location = new System.Drawing.Point(19, 32);
 			this.flpanelTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.flpanelTable.Name = "flpanelTable";
-			this.flpanelTable.Size = new System.Drawing.Size(440, 422);
+			this.flpanelTable.Size = new System.Drawing.Size(456, 422);
 			this.flpanelTable.TabIndex = 6;
+			// 
+			// columnHeader1
+			// 
+			this.columnHeader1.Text = "Thức Ăn";
+			this.columnHeader1.Width = 180;
+			// 
+			// columnHeader2
+			// 
+			this.columnHeader2.Text = "Số Lượng";
+			this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.columnHeader2.Width = 42;
+			// 
+			// columnHeader3
+			// 
+			this.columnHeader3.Text = "Đơn Giá";
+			this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.columnHeader3.Width = 83;
+			// 
+			// columnHeader4
+			// 
+			this.columnHeader4.Text = "Thành Tiền";
+			this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.columnHeader4.Width = 94;
+			// 
+			// tbtotal
+			// 
+			this.tbtotal.Enabled = false;
+			this.tbtotal.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbtotal.ForeColor = System.Drawing.Color.DarkRed;
+			this.tbtotal.Location = new System.Drawing.Point(212, 22);
+			this.tbtotal.Name = "tbtotal";
+			this.tbtotal.ReadOnly = true;
+			this.tbtotal.Size = new System.Drawing.Size(130, 27);
+			this.tbtotal.TabIndex = 7;
+			this.tbtotal.Text = "0";
+			this.tbtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// fTableManager
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(792, 464);
+			this.ClientSize = new System.Drawing.Size(924, 464);
 			this.Controls.Add(this.flpanelTable);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel3);
@@ -211,6 +259,7 @@ namespace QLNH
 			this.Text = "Phần mềm quản lý nhà hàng";
 			this.panel2.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
+			this.panel3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
 			this.panel4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -233,5 +282,10 @@ namespace QLNH
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.FlowLayoutPanel flpanelTable;
-    }
+		private System.Windows.Forms.ColumnHeader columnHeader1;
+		private System.Windows.Forms.ColumnHeader columnHeader2;
+		private System.Windows.Forms.ColumnHeader columnHeader3;
+		private System.Windows.Forms.ColumnHeader columnHeader4;
+		private System.Windows.Forms.TextBox tbtotal;
+	}
 }

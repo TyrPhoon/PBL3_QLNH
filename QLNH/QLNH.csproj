@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_HDon.cs" />
+    <Compile Include="BLL\BLL_ThucAn.cs" />
     <Compile Include="Entity\BanAn.cs">
       <DependentUpon>QLNHang.tt</DependentUpon>
     </Compile>
@@ -177,9 +179,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Entity\QLNHang.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
