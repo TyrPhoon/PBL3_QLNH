@@ -36,5 +36,18 @@ namespace QLNH.BLL
 			}
 			return t;
 		}
+		public List<CBBItems> GetCBBThucAnByIDDM(int id)
+		{
+			List<CBBItems> data = new List<CBBItems>();
+			PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+			foreach (Thucan item in db.Thucans)
+			{
+				if (item.iddanhmuc == id)
+				{
+					data.Add(new CBBItems { Value = item.id, Text = item.ten });
+				}
+			}
+			return data;
+		}
 	}
 }
