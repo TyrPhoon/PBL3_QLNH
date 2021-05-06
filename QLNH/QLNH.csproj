@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,51 +55,103 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fAccountProfile.cs">
+    <Compile Include="BLL\BLL_BanAn.cs" />
+    <Compile Include="BLL\BLL_BanSD.cs" />
+    <Compile Include="BLL\BLL_Ca.cs" />
+    <Compile Include="BLL\BLL_DMTAn.cs" />
+    <Compile Include="BLL\BLL_HDCTiet.cs" />
+    <Compile Include="BLL\BLL_HDon.cs" />
+    <Compile Include="BLL\BLL_NhanVien.cs" />
+    <Compile Include="BLL\BLL_TaiKhoan.cs" />
+    <Compile Include="BLL\BLL_ThucAn.cs" />
+    <Compile Include="Entity\BanAn.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\BanSuDung.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Ca.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CBBItems.cs" />
+    <Compile Include="Entity\Danhmucthucan.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\HoaDon.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\HoaDonchitiet.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\NhanVien.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLNHang.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNHang.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLNHang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLNHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNHang.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TaiKhoan.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Thucan.cs">
+      <DependentUpon>QLNHang.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\fAccountProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAccountProfile.Designer.cs">
+    <Compile Include="View\fAccountProfile.Designer.cs">
       <DependentUpon>fAccountProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAdmin.cs">
+    <Compile Include="View\fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAdmin.Designer.cs">
+    <Compile Include="View\fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fHome.cs">
+    <Compile Include="View\fHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fHome.Designer.cs">
+    <Compile Include="View\fHome.Designer.cs">
       <DependentUpon>fHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="fLogin.cs">
+    <Compile Include="View\fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fLogin.Designer.cs">
+    <Compile Include="View\fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fTableManager.cs">
+    <Compile Include="View\fTableManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fTableManager.Designer.cs">
+    <Compile Include="View\fTableManager.Designer.cs">
       <DependentUpon>fTableManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="fAccountProfile.resx">
+    <EmbeddedResource Include="View\fAccountProfile.resx">
       <DependentUpon>fAccountProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAdmin.resx">
+    <EmbeddedResource Include="View\fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fHome.resx">
+    <EmbeddedResource Include="View\fHome.resx">
       <DependentUpon>fHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fLogin.resx">
+    <EmbeddedResource Include="View\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fTableManager.resx">
+    <EmbeddedResource Include="View\fTableManager.resx">
       <DependentUpon>fTableManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -102,6 +163,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="Entity\QLNHang.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLNHang.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\QLNHang.edmx.diagram">
+      <DependentUpon>QLNHang.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +183,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Entity\QLNHang.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNHang.edmx</DependentUpon>
+      <LastGenOutput>QLNHang.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\QLNHang.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNHang.edmx</DependentUpon>
+      <LastGenOutput>QLNHang.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
