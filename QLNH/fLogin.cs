@@ -16,7 +16,7 @@ namespace QLNH
         {
             InitializeComponent();
         }
-
+        public int a;
         private void button1_Click(object sender, EventArgs e)
         {
             fHome f = new fHome();
