@@ -62,6 +62,7 @@ namespace QLNH
             }
         }
 
+
         void ShowHD(int id)
         {
             int total = 0;
@@ -179,3 +180,76 @@ namespace QLNH
         }
 	}
 }
+
+
+
+//private void BTAddfood_Click(object sender, EventArgs e)
+//{
+//    int IDTable = Convert.ToInt32(LVHoaDon.Tag.ToString());
+//    int IDFood = ((CBBItems)CbbThucAn.SelectedItem).Value;
+//    int Soluong = Convert.ToInt32(NbrudSoluong.Value.ToString());
+//    bool hd = BLL_HDon.Instance.AddHDon(IDTable);
+//    if (hd == false)
+//    {
+//        DialogResult KQ = MessageBox.Show("Bàn này hiện còn hóa đơn chưa thanh toán, bạn có muốn thêm món vào hóa đơn này không?", "Thông Báo", MessageBoxButtons.OKCancel);
+//        if (KQ == DialogResult.OK)
+//        {
+//            BLL_HDCTiet.Instance.AddHDCT(IDTable, IDFood, Soluong);
+//        }
+//    }
+//    else
+//    {
+//        BLL_BanAn.Instance.UpdateTableWhenAddFood(IDTable);
+//        BLL_BanSD.Instance.InsertBanSDWhenAddFood(IDTable);
+//        BLL_HDCTiet.Instance.AddHDCT(IDTable, IDFood, Soluong);
+//    }
+//    LoadTable();
+//    ShowHD(IDTable);
+//}
+
+//private void BTThanhToan_Click(object sender, EventArgs e)
+//{
+//    int IDTable = Convert.ToInt32(LVHoaDon.Tag.ToString());
+//    int Total = Convert.ToInt32(tbtotal.Text);
+//    if (BLL_HDon.Instance.check(IDTable))
+//    {
+//        DialogResult KQ = MessageBox.Show("Bạn có chắc chắn muốn thanh toán cho bàn " + IDTable, "Thông báo", MessageBoxButtons.YesNo);
+//        if (KQ == DialogResult.Yes)
+//        {
+//            BLL_HDon.Instance.ThanhToanHDon(IDTable, Total);
+//            BLL_BanAn.Instance.UpdateTableWhenThanhToan(IDTable);
+//            BLL_BanSD.Instance.DeleteBanSDWhenThanhToan(IDTable);
+//            LoadTable();
+//            ShowHD(IDTable);
+//        }
+//    }
+//    else
+//    {
+//        MessageBox.Show("Bàn số " + IDTable + " chưa dùng món, không thể thanh toán");
+//    }
+
+
+//}
+
+//private void BTgiamgia_Click(object sender, EventArgs e)
+//{
+//    int Total = Convert.ToInt32(tbtotal.Text);
+//    Total = Total * (100 - Convert.ToInt32(NbrudGiamgia.Value)) / 100;
+//    tbtotal.Text = Total.ToString();
+//}
+
+//private void BTChuyenban_Click(object sender, EventArgs e)
+//{
+//    int IDNewTable = ((CBBItems)Cbbbanchuyen.SelectedItem).Value;
+//    int IDTable = Convert.ToInt32(LVHoaDon.Tag.ToString());
+//    BLL_BanAn.Instance.ChuyenBan(IDTable, IDNewTable);
+//    BLL_HDon.Instance.ChuyenBan(IDTable, IDNewTable);
+//    BLL_BanSD.Instance.ChuyenBan(IDTable, IDNewTable);
+//    LoadTable();
+//    ShowHD(IDTable);
+//}
+//	}
+//}
+
+
+
