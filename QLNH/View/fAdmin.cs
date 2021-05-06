@@ -10,6 +10,17 @@ using System.Windows.Forms;
 using QLNH.Entity;
 using QLNH.BLL;
 //asdfsdafasdfasdfasdfasdfasfasfasfasfsafsadfasdfasdfsdfas
+// safasdf
+// asdf
+// asd
+// f
+// asd
+// fas
+// f
+// as
+// df
+// asdf
+
 namespace QLNH
 {
     public partial class fAdmin : Form
