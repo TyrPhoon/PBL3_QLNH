@@ -22,13 +22,24 @@ namespace QLNH.BLL
 			}
 			private set { }
 		}
-		public List<CBBItems> GetCBBBanAn(int ID)
+
+		public List<BanAn> GetBanAns()
+		{
+			PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+			List<BanAn> data = new List<BanAn>();
+			foreach (BanAn i in db.BanAns)
+			{
+				data.Add(i);
+			}
+			return data;
+		}
+		public List<CBBItems> GetCBBBanChuyen(int ID)
 		{
 			List<CBBItems> data = new List<CBBItems>();
 			PBL3_QLNHEntities db = new PBL3_QLNHEntities();
 			foreach (BanAn item in db.BanAns)
 			{
-				if (item.id != ID)
+				if (item.id != ID && item.trangthai == "Trống")
 				{
 					data.Add(new CBBItems { Value = item.id, Text = item.ten });
 				}

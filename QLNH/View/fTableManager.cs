@@ -23,7 +23,7 @@ namespace QLNH
         void SetCBBCBan(int ID)
         {
             Cbbbanchuyen.Items.Clear();
-            Cbbbanchuyen.Items.AddRange(BLL_BanAn.Instance.GetCBBBanAn(ID).ToArray());
+            Cbbbanchuyen.Items.AddRange(BLL_BanAn.Instance.GetCBBBanChuyen(ID).ToArray());
             Cbbbanchuyen.SelectedIndex = 0;
         }
         void SetCBBDMTAn()

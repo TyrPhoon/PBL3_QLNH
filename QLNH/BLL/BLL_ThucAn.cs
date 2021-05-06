@@ -23,6 +23,16 @@ namespace QLNH.BLL
 			}
 			private set { }
 		}
+		public List<Thucan> GetThucAn()
+		{
+			PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+			List<Thucan> data = new List<Thucan>();
+			foreach (Thucan i in db.Thucans)
+			{
+				data.Add(i);
+			}
+			return data;
+		}
 		public Thucan GetThucAnByID(int id)
 		{
 			Thucan t = new Thucan();

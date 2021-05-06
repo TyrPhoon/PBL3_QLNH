@@ -57,9 +57,12 @@
   <ItemGroup>
     <Compile Include="BLL\BLL_BanAn.cs" />
     <Compile Include="BLL\BLL_BanSD.cs" />
+    <Compile Include="BLL\BLL_Ca.cs" />
     <Compile Include="BLL\BLL_DMTAn.cs" />
     <Compile Include="BLL\BLL_HDCTiet.cs" />
     <Compile Include="BLL\BLL_HDon.cs" />
+    <Compile Include="BLL\BLL_NhanVien.cs" />
+    <Compile Include="BLL\BLL_TaiKhoan.cs" />
     <Compile Include="BLL\BLL_ThucAn.cs" />
     <Compile Include="Entity\BanAn.cs">
       <DependentUpon>QLNHang.tt</DependentUpon>
