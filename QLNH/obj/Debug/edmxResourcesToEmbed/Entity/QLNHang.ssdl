@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PBL3_QLNHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BanAn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="trangthai" Type="nvarchar" MaxLength="100" />
+    <Property Name="songuoi" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BanSuDung">
+    <Key>
+      <PropertyRef Name="idban" />
+    </Key>
+    <Property Name="idhoadon" Type="int" />
+    <Property Name="idban" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ca">
+    <Key>
+      <PropertyRef Name="idca" />
+    </Key>
+    <Property Name="idca" Type="int" Nullable="false" />
+    <Property Name="tenca" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tgbd" Type="time" Precision="7" />
+    <Property Name="tgkt" Type="time" Precision="7" />
+    <Property Name="idquanly" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Danhmucthucan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="idhoadon" />
+    </Key>
+    <Property Name="idhoadon" Type="int" Nullable="false" />
+    <Property Name="ngaycheckin" Type="date" Nullable="false" />
+    <Property Name="ngaycheckout" Type="date" />
+    <Property Name="idban" Type="int" Nullable="false" />
+    <Property Name="trangthai" Type="int" />
+    <Property Name="Tongtien" Type="int" />
+    <Property Name="idnv" Type="int" />
+  </EntityType>
+  <EntityType Name="HoaDonchitiet">
+    <Key>
+      <PropertyRef Name="idhdct" />
+    </Key>
+    <Property Name="idhdct" Type="int" Nullable="false" />
+    <Property Name="idhoadon" Type="int" Nullable="false" />
+    <Property Name="idthucan" Type="int" Nullable="false" />
+    <Property Name="soluong" Type="int" Nullable="false" />
+    <Property Name="dongia" Type="int" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="idnv" />
+    </Key>
+    <Property Name="idnv" Type="int" Nullable="false" />
+    <Property Name="tennv" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ngaysinh" Type="nvarchar" MaxLength="100" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="100" />
+    <Property Name="luong" Type="int" />
+    <Property Name="idca" Type="int" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="tendangnhap" />
+    </Key>
+    <Property Name="tendangnhap" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="tenhienthi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="matkhau" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="vaitro" Type="int" Nullable="false" />
+    <Property Name="idnv" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Thucan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="iddanhmuc" Type="int" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="gia" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__HoaDonchi__idhoa__24927208">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="HoaDonchitiet" Type="Self.HoaDonchitiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="idhoadon" />
+      </Principal>
+      <Dependent Role="HoaDonchitiet">
+        <PropertyRef Name="idhoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDonchi__idthu__25869641">
+    <End Role="Thucan" Type="Self.Thucan" Multiplicity="1" />
+    <End Role="HoaDonchitiet" Type="Self.HoaDonchitiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thucan">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HoaDonchitiet">
+        <PropertyRef Name="idthucan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Thucan__iddanhmu__22AA2996">
+    <End Role="Danhmucthucan" Type="Self.Danhmucthucan" Multiplicity="1" />
+    <End Role="Thucan" Type="Self.Thucan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmucthucan">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Thucan">
+        <PropertyRef Name="iddanhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanSuDung_BanAn">
+    <End Role="BanAn" Type="Self.BanAn" Multiplicity="1" />
+    <End Role="BanSuDung" Type="Self.BanSuDung" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BanAn">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BanSuDung">
+        <PropertyRef Name="idban" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanSuDung_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+    <End Role="BanSuDung" Type="Self.BanSuDung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="idhoadon" />
+      </Principal>
+      <Dependent Role="BanSuDung">
+        <PropertyRef Name="idhoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="idnv" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="idnv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_Ca">
+    <End Role="Ca" Type="Self.Ca" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ca">
+        <PropertyRef Name="idca" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="idca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaiKhoan_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="idnv" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="idnv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PBL3_QLNHModelStoreContainer">
+    <EntitySet Name="BanAn" EntityType="Self.BanAn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BanSuDung" EntityType="Self.BanSuDung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ca" EntityType="Self.Ca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Danhmucthucan" EntityType="Self.Danhmucthucan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDonchitiet" EntityType="Self.HoaDonchitiet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thucan" EntityType="Self.Thucan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__HoaDonchi__idhoa__24927208" Association="Self.FK__HoaDonchi__idhoa__24927208">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="HoaDonchitiet" EntitySet="HoaDonchitiet" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDonchi__idthu__25869641" Association="Self.FK__HoaDonchi__idthu__25869641">
+      <End Role="Thucan" EntitySet="Thucan" />
+      <End Role="HoaDonchitiet" EntitySet="HoaDonchitiet" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Thucan__iddanhmu__22AA2996" Association="Self.FK__Thucan__iddanhmu__22AA2996">
+      <End Role="Danhmucthucan" EntitySet="Danhmucthucan" />
+      <End Role="Thucan" EntitySet="Thucan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanSuDung_BanAn" Association="Self.FK_BanSuDung_BanAn">
+      <End Role="BanAn" EntitySet="BanAn" />
+      <End Role="BanSuDung" EntitySet="BanSuDung" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanSuDung_HoaDon" Association="Self.FK_BanSuDung_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="BanSuDung" EntitySet="BanSuDung" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_NhanVien" Association="Self.FK_HoaDon_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_Ca" Association="Self.FK_NhanVien_Ca">
+      <End Role="Ca" EntitySet="Ca" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaiKhoan_NhanVien" Association="Self.FK_TaiKhoan_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

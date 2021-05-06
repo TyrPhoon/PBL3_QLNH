@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PBL3_QLNHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BanAn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="trangthai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="songuoi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BanSuDung" Relationship="Self.FK_BanSuDung_BanAn" FromRole="BanAn" ToRole="BanSuDung" />
+  </EntityType>
+  <EntityType Name="BanSuDung">
+    <Key>
+      <PropertyRef Name="idban" />
+    </Key>
+    <Property Name="idhoadon" Type="Int32" />
+    <Property Name="idban" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BanAn" Relationship="Self.FK_BanSuDung_BanAn" FromRole="BanSuDung" ToRole="BanAn" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK_BanSuDung_HoaDon" FromRole="BanSuDung" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="Ca">
+    <Key>
+      <PropertyRef Name="idca" />
+    </Key>
+    <Property Name="idca" Type="Int32" Nullable="false" />
+    <Property Name="tenca" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tgbd" Type="Time" Precision="7" />
+    <Property Name="tgkt" Type="Time" Precision="7" />
+    <Property Name="idquanly" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.FK_NhanVien_Ca" FromRole="Ca" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="Danhmucthucan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Thucans" Relationship="Self.FK__Thucan__iddanhmu__22AA2996" FromRole="Danhmucthucan" ToRole="Thucan" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="idhoadon" />
+    </Key>
+    <Property Name="idhoadon" Type="Int32" Nullable="false" />
+    <Property Name="ngaycheckin" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ngaycheckout" Type="DateTime" Precision="0" />
+    <Property Name="idban" Type="Int32" Nullable="false" />
+    <Property Name="trangthai" Type="Int32" />
+    <Property Name="Tongtien" Type="Int32" />
+    <Property Name="idnv" Type="Int32" />
+    <NavigationProperty Name="BanSuDungs" Relationship="Self.FK_BanSuDung_HoaDon" FromRole="HoaDon" ToRole="BanSuDung" />
+    <NavigationProperty Name="HoaDonchitiets" Relationship="Self.FK__HoaDonchi__idhoa__24927208" FromRole="HoaDon" ToRole="HoaDonchitiet" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_HoaDon_NhanVien" FromRole="HoaDon" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="HoaDonchitiet">
+    <Key>
+      <PropertyRef Name="idhdct" />
+    </Key>
+    <Property Name="idhdct" Type="Int32" Nullable="false" />
+    <Property Name="idhoadon" Type="Int32" Nullable="false" />
+    <Property Name="idthucan" Type="Int32" Nullable="false" />
+    <Property Name="soluong" Type="Int32" Nullable="false" />
+    <Property Name="dongia" Type="Int32" />
+    <NavigationProperty Name="HoaDon" Relationship="Self.FK__HoaDonchi__idhoa__24927208" FromRole="HoaDonchitiet" ToRole="HoaDon" />
+    <NavigationProperty Name="Thucan" Relationship="Self.FK__HoaDonchi__idthu__25869641" FromRole="HoaDonchitiet" ToRole="Thucan" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="idnv" />
+    </Key>
+    <Property Name="idnv" Type="Int32" Nullable="false" />
+    <Property Name="tennv" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngaysinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="luong" Type="Int32" />
+    <Property Name="idca" Type="Int32" />
+    <NavigationProperty Name="Ca" Relationship="Self.FK_NhanVien_Ca" FromRole="NhanVien" ToRole="Ca" />
+    <NavigationProperty Name="HoaDons" Relationship="Self.FK_HoaDon_NhanVien" FromRole="NhanVien" ToRole="HoaDon" />
+    <NavigationProperty Name="TaiKhoans" Relationship="Self.FK_TaiKhoan_NhanVien" FromRole="NhanVien" ToRole="TaiKhoan" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="tendangnhap" />
+    </Key>
+    <Property Name="tendangnhap" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenhienthi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="matkhau" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="vaitro" Type="Int32" Nullable="false" />
+    <Property Name="idnv" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK_TaiKhoan_NhanVien" FromRole="TaiKhoan" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="Thucan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="iddanhmuc" Type="Int32" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="gia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Danhmucthucan" Relationship="Self.FK__Thucan__iddanhmu__22AA2996" FromRole="Thucan" ToRole="Danhmucthucan" />
+    <NavigationProperty Name="HoaDonchitiets" Relationship="Self.FK__HoaDonchi__idthu__25869641" FromRole="Thucan" ToRole="HoaDonchitiet" />
+  </EntityType>
+  <Association Name="FK_BanSuDung_BanAn">
+    <End Role="BanAn" Type="Self.BanAn" Multiplicity="1" />
+    <End Role="BanSuDung" Type="Self.BanSuDung" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BanAn">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BanSuDung">
+        <PropertyRef Name="idban" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanSuDung_HoaDon">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+    <End Role="BanSuDung" Type="Self.BanSuDung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="idhoadon" />
+      </Principal>
+      <Dependent Role="BanSuDung">
+        <PropertyRef Name="idhoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_Ca">
+    <End Role="Ca" Type="Self.Ca" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ca">
+        <PropertyRef Name="idca" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="idca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Thucan__iddanhmu__22AA2996">
+    <End Role="Danhmucthucan" Type="Self.Danhmucthucan" Multiplicity="1" />
+    <End Role="Thucan" Type="Self.Thucan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmucthucan">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Thucan">
+        <PropertyRef Name="iddanhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDonchi__idhoa__24927208">
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
+    <End Role="HoaDonchitiet" Type="Self.HoaDonchitiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="idhoadon" />
+      </Principal>
+      <Dependent Role="HoaDonchitiet">
+        <PropertyRef Name="idhoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="idnv" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="idnv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDonchi__idthu__25869641">
+    <End Role="Thucan" Type="Self.Thucan" Multiplicity="1" />
+    <End Role="HoaDonchitiet" Type="Self.HoaDonchitiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thucan">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HoaDonchitiet">
+        <PropertyRef Name="idthucan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaiKhoan_NhanVien">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="idnv" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="idnv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PBL3_QLNHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BanAns" EntityType="Self.BanAn" />
+    <EntitySet Name="BanSuDungs" EntityType="Self.BanSuDung" />
+    <EntitySet Name="Cas" EntityType="Self.Ca" />
+    <EntitySet Name="Danhmucthucans" EntityType="Self.Danhmucthucan" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
+    <EntitySet Name="HoaDonchitiets" EntityType="Self.HoaDonchitiet" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+    <EntitySet Name="Thucans" EntityType="Self.Thucan" />
+    <AssociationSet Name="FK_BanSuDung_BanAn" Association="Self.FK_BanSuDung_BanAn">
+      <End Role="BanAn" EntitySet="BanAns" />
+      <End Role="BanSuDung" EntitySet="BanSuDungs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanSuDung_HoaDon" Association="Self.FK_BanSuDung_HoaDon">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="BanSuDung" EntitySet="BanSuDungs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_Ca" Association="Self.FK_NhanVien_Ca">
+      <End Role="Ca" EntitySet="Cas" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Thucan__iddanhmu__22AA2996" Association="Self.FK__Thucan__iddanhmu__22AA2996">
+      <End Role="Danhmucthucan" EntitySet="Danhmucthucans" />
+      <End Role="Thucan" EntitySet="Thucans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDonchi__idhoa__24927208" Association="Self.FK__HoaDonchi__idhoa__24927208">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="HoaDonchitiet" EntitySet="HoaDonchitiets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_NhanVien" Association="Self.FK_HoaDon_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDonchi__idthu__25869641" Association="Self.FK__HoaDonchi__idthu__25869641">
+      <End Role="Thucan" EntitySet="Thucans" />
+      <End Role="HoaDonchitiet" EntitySet="HoaDonchitiets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaiKhoan_NhanVien" Association="Self.FK_TaiKhoan_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
