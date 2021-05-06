@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLNH.Entity;
 using QLNH.BLL;
-
+//asdfsdafasdfasdfasdfasdfasfasfasfasfsafsadfasdfasdfsdfas
 namespace QLNH
 {
     public partial class fAdmin : Form
