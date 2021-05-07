@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using QLNH.Entity;
 
 namespace QLNH.BLL
-{
+{//hhhhcababjschshdhadqrqesadadsdada
 	class BLL_BanSD
 	{
 		private static BLL_BanSD _Instance;
