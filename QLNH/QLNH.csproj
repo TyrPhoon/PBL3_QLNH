@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +55,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_QLNH.cs" />
+    <Compile Include="Entity\BanAn.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\BanSuDung.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Ca.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CBBItems.cs" />
+    <Compile Include="Entity\Danhmucthucan.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\HoaDon.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\HoaDonchitiet.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\NhanVien.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLNH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNH.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLNH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLNH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TaiKhoan.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Thucan.cs">
+      <DependentUpon>QLNH.tt</DependentUpon>
+    </Compile>
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +155,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="Entity\QLNH.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLNH.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\QLNH.edmx.diagram">
+      <DependentUpon>QLNH.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +175,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\QLNH.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QLNH.Context.cs</LastGenOutput>
+      <DependentUpon>QLNH.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\QLNH.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLNH.edmx</DependentUpon>
+      <LastGenOutput>QLNH.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

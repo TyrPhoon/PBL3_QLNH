@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="93f826d78cc743288aae1bf0cc8c0c9c" Name="Diagram1">
+        <EntityTypeShape EntityType="PBL3_QLNHModel.BanAn" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_QLNHModel.BanSuDung" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_QLNHModel.Ca" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_QLNHModel.Danhmucthucan" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_QLNHModel.HoaDon" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_QLNHModel.HoaDonchitiet" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_QLNHModel.NhanVien" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_QLNHModel.TaiKhoan" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3_QLNHModel.Thucan" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="PBL3_QLNHModel.FK_BanSuDung_BanAn" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_QLNHModel.FK_BanSuDung_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_QLNHModel.FK_NhanVien_Ca" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_QLNHModel.FK__Thucan__iddanhmu__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_QLNHModel.FK__HoaDonchi__idhoa__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_QLNHModel.FK_HoaDon_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_QLNHModel.FK__HoaDonchi__idthu__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3_QLNHModel.FK_TaiKhoan_NhanVien" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
