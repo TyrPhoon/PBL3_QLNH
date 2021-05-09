@@ -70,3 +70,38 @@ namespace QLNH.BLL
 		}
 	}
 }
+
+
+//public void AddHDCT(int idban, int idthucan, int soluong)
+//{
+//	PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+//	int idhd = 0, gia = 0, idhdct = db.HoaDonchitiets.Count() + 1;
+//	foreach (BanSuDung i in db.BanSuDungs)
+//	{
+//		if (i.idban == idban)
+//		{
+//			idhd = (int)i.idhoadon;
+//		}
+//	}
+//	foreach (Thucan i in db.Thucans)
+//	{
+//		if (i.id == idthucan)
+//		{
+//			gia = i.gia;
+//		}
+//	}
+//	HoaDonchitiet hdct = new HoaDonchitiet()
+//	{
+//		idhdct = idhdct,
+//		idthucan = idthucan,
+//		idhoadon = idhd,
+//		soluong = soluong,
+//		dongia = gia
+//	};
+//	db.HoaDonchitiets.Add(hdct);
+//	db.SaveChanges();
+
+//}
+//	}
+//}
+
