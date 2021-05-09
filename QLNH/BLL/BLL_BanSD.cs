@@ -70,3 +70,33 @@ namespace QLNH.BLL
 		}
 	}
 }
+
+//public void DeleteBanSDWhenThanhToan(int ID)
+//{
+//	PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+//	foreach (BanSuDung i in db.BanSuDungs)
+//	{
+//		if (i.idban == ID)
+//		{
+//			db.BanSuDungs.Remove(i);
+//			break;
+//		}
+//	}
+//	db.SaveChanges();
+//}
+//public void ChuyenBan(int IDcu, int IDmoi)
+//{
+//	PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+//	foreach (BanSuDung i in db.BanSuDungs)
+//	{
+//		if (i.idban == IDcu)
+//		{
+//			db.BanSuDungs.Remove(i);
+//			break;
+//		}
+//	}
+//	InsertBanSDWhenAddFood(IDmoi);
+//	db.SaveChanges();
+//}
+//	}
+//}

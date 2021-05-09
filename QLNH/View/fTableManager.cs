@@ -183,6 +183,27 @@ namespace QLNH
 
 
 
+//private void BTgiamgia_Click(object sender, EventArgs e)
+//{
+//    int Total = Convert.ToInt32(tbtotal.Text);
+//    Total = Total * (100 - Convert.ToInt32(NbrudGiamgia.Value)) / 100;
+//    tbtotal.Text = Total.ToString();
+//}
+
+//private void BTChuyenban_Click(object sender, EventArgs e)
+//{
+//    int IDNewTable = ((CBBItems)Cbbbanchuyen.SelectedItem).Value;
+//    int IDTable = Convert.ToInt32(LVHoaDon.Tag.ToString());
+//    BLL_BanAn.Instance.ChuyenBan(IDTable, IDNewTable);
+//    BLL_HDon.Instance.ChuyenBan(IDTable, IDNewTable);
+//    BLL_BanSD.Instance.ChuyenBan(IDTable, IDNewTable);
+//    LoadTable();
+//    ShowHD(IDTable);
+//}
+
+
+
+
 //private void BTAddfood_Click(object sender, EventArgs e)
 //{
 //    int IDTable = Convert.ToInt32(LVHoaDon.Tag.ToString());

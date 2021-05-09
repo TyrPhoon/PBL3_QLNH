@@ -72,3 +72,33 @@ namespace QLNH.BLL
 		}
 	}
 }
+
+
+
+//public void UpdateTableWhenAddFood(int IDTable)
+//{
+//	PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+//	var s = db.BanAns.Find(IDTable);
+//	s.trangthai = "Đang SD";
+//	db.SaveChanges();
+//}
+//public void UpdateTableWhenThanhToan(int ID)
+//{
+//	PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+//	var s = db.BanAns.Find(ID);
+//	s.trangthai = "Trống";
+//	db.SaveChanges();
+//}
+
+//public void ChuyenBan(int IDcu, int IDmoi)
+//{
+//	PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+//	var s1 = db.BanAns.Where(p => p.id == IDcu).FirstOrDefault();
+//	s1.trangthai = "Trống";
+//	var s2 = db.BanAns.Where(p => p.id == IDmoi).FirstOrDefault();
+//	s2.trangthai = "Đang SD";
+//	db.SaveChanges();
+//}
+//	}
+//}
+
