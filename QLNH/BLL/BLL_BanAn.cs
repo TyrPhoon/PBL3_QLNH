@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QLNH.Entity;
-
+/// <summary>
+/// qqeqeq
+/// </summary>
 namespace QLNH.BLL
 {
 	class BLL_BanAn
