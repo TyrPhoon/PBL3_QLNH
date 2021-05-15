@@ -67,7 +67,7 @@ namespace QLNH
 //public int a;
 //private void button1_Click(object sender, EventArgs e)
 //{
-//    fHome f = new fHome();
+//    fHome f = new fHome();wwww
 //    this.Hide();
 //    f.ShowDialog();
 //    this.Show();
