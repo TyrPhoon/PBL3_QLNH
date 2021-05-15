@@ -24,3 +24,21 @@ namespace QLNH.BLL
 		}
 	}
 }
+//{
+//	class BLL_TaiKhoan
+//{
+//	private static BLL_TaiKhoan _Instance;
+//	public static BLL_TaiKhoan Instance
+//	{
+//		get
+//		{
+//			if (_Instance == null)
+//			{
+//				_Instance = new BLL_TaiKhoan();
+//			}
+//			return _Instance;
+//		}
+//		private set { }
+//	}
+//}
+//}
