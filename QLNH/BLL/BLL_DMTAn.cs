@@ -33,5 +33,16 @@ namespace QLNH.BLL
 			}
 			return data;
 		}
+		public List<CBBItems> GetCBBDMThucAn2()
+		{
+			List<CBBItems> data = new List<CBBItems>();
+			PBL3_QLNHEntities db = new PBL3_QLNHEntities();
+			foreach (Danhmucthucan item in db.Danhmucthucans)
+			{
+				data.Add(new CBBItems { Value = item.id, Text = item.ten });
+			}
+			return data;
+		}
+
 	}
 }
